@@ -1,0 +1,14 @@
+extends base
+
+block content 
+    include headerCourse
+    section.section-description
+        .left-detail 
+            h1.heading-secondary.ma-bt-lg.course-name= course.name
+            img.ibm(src=`/img/courses/${course.imageCover}`, alt=`${course.name}`)
+        .description-box
+            a.ibmLink(href="#") Click me to start/continue your course on IBM SKillsbuild
+            p When finished come back and click on "Finish" button below
+    .button-over
+        a.card__footer.ml-4.border.revc.border-blue-500.font-medium.py-2.px-4.rounded.nav__el-courses.finish(data-course-id=course._id href="/dashboard") Finish
+

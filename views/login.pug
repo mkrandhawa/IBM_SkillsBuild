@@ -1,0 +1,23 @@
+extends loginSignup
+
+block append head 
+    link(rel='stylesheet' href='/css/login.css')
+
+block content
+   .container.mt-5
+        .row.justify-content-center
+            .col-md-6.col-lg-4
+                .login-form.bg-white.p-4.shadow.rounded-3
+                    .text-center.mb-4
+                        img(src="/img/ibm-logo.png", alt="IBM Logo", style="width: 120px;")
+                    form.form.form--login
+                        .form-group.mb-3
+                            label.form-label(for="email") Email:
+                            input#email.form-control(type="email",  placeholder='you@example.com', required)
+                        .form-group.mb-3
+                            label.form-label(for="password") Password:
+                            input#password.form-control(type="password", placeholder='••••••••' required, minlength='8')
+                        .form-group
+                            button.btn.btn-primary.w-100 Login
+                            .text-center.mt-3
+                                a.btn.btn-outline-secondary.btn-sm(href="/signup") No account? Sign up

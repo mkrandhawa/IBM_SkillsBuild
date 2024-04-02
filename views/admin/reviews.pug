@@ -1,0 +1,24 @@
+extends ../../views/base 
+
+block append head 
+    link(rel='stylesheet' href='/css/profile.css')
+
+block content
+    include ../../views/headerCourse
+    .main-container
+        include navAdmin
+        .content_delete
+            if reviews.length>0
+                each r in reviews
+                    .delete__reviews
+                        h3.reviews-user= r.user.name
+                        h5.title= r.course.name
+                        p.reviews__text= r.review 
+                        .reviews__rating
+                            each star in [1,2,3,4,5] 
+                                svg.reviews__star(class= `reviews__star--${r.rating>=star? 'active': 'inactive'}`)
+                                    use(xlink:href='/img/icons.svg#icon-star')
+                        a.delete_btns(data-review-id=r._id) Delete
+            else 
+                h2.heading-secondary.heading-quick.ma-bt-lg.heading  This course does not have any comments!
+

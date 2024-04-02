@@ -1,0 +1,42 @@
+extends base
+
+
+block content 
+    include _header
+    .container-dashboard
+        .text 
+            h1 Welcome to your SkillsBuild Dashboard!
+            p= `Your current points balance is ${user.points}.`
+    .line
+    if courses 
+        h2.heading-secondary.heading-quick.ma-bt-lg.heading= `You are currently enrolled in ${courses.length} course/s.`
+        .card-wrapper
+            each course in courses
+                .card.mb-3(style="max-width: 540px")
+                    .row.g-0 
+                        .col-md-4 
+                            img.img-fluid-rounded-start(src=`img/courses/${course.imageCover}` alt=`${course.name}`)
+                        .col-md-8 
+                            .card-body 
+                                h5.card-title= course.name
+                                p.card-text= course.summary 
+                    .card__footer__dashboard
+                        - let progressI = progress.find(p => p.course.toString() === course._id.toString())
+                        if progressI
+                            if progressI.timeStart && !progressI.timeCompleted
+                                p.card-text= `Start: ${new Date(progressI.timeStart).toLocaleDateString()}`
+                                a.card__footer.ml-4.bg-green-500.text-white.border.revc.border-green-500.font-medium.py-2.px-4.rounded.nav__el-courses(href=`/ibmCourse/${course.slug}`) Continue
+                                button.card__footer.ml-4.text-blue-500.border.rev.border-blue-500.font-medium.py-2.px-4.rounded.nav__el-courses(disabled) Review
+                            else if progressI.timeCompleted
+                                p.card-text= `Start: ${new Date(progressI.timeStart).toLocaleDateString()} End: ${new Date(progressI.timeCompleted).toLocaleDateString()}`
+                                a.card__footer.ml-4.bg-green-500.text-white.border.revc.border-green-500.font-medium.py-2.px-4.rounded.nav__el-courses Completed
+                                a.card__footer.ml-4.text-blue-500.border.rev.border-blue-500.font-medium.py-2.px-4.rounded.nav__el-courses(href=`/review/${course.slug}`) Review
+                        else
+                            a.startCourse.card__footer.ml-4.border.revc.border-green-500.font-medium.py-2.px-4.rounded.nav__el-courses(data-course-id=course._id href=`/ibmCourse/${course.slug}`) Start
+                            button.card__footer.ml-4.text-blue-500.border.rev.border-blue-500.font-medium.py-2.px-4.rounded.nav__el-courses(disabled) Review
+       
+    else
+        h2.heading-secondary.heading-quick.ma-bt-lg.heading You are not enrolled in any course.
+
+   
+

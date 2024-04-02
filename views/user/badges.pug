@@ -1,0 +1,29 @@
+extends ../../views/base 
+
+block append head
+  link(rel='stylesheet' href='/css/badges.css')
+
+block content 
+    include ../../views/headerCourse 
+    .main-container 
+      include navUser
+      .content
+        br
+        br
+        h1.ranking Ranking Page
+        table
+          tr
+            th Name
+            td= user.name
+          tr
+            th Points
+            td= user.points
+        .badge-container
+          each rank, index in [100, 500, 1000, 1500, 2000]
+            - let pointsNeeded = rank;
+            - let isUnlocked = user.points >= pointsNeeded; 
+            .badge(class=`level-${index + 1}${!isUnlocked ? ' locked' : ''}`)
+              p= `POINTS: ${pointsNeeded}`
+              h2= `Level ${index + 1}`
+              br
+              p= isUnlocked ? 'Unlocked' : 'Locked'

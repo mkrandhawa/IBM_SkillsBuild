@@ -1,0 +1,10 @@
+extends ../../views/base
+
+
+block content 
+    include ../../views/headerCourse 
+    .main-container
+        include navAdmin
+        .content 
+            .welcome= `Welcome, ${user.name.toUpperCase()}`
+            p.description Ready to empower and manage your community today?

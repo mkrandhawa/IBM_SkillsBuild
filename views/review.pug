@@ -1,0 +1,33 @@
+extends base 
+
+block append head 
+    link(rel='stylesheet' href='/css/review.css')
+
+block content
+    include headerCourse
+    .container-revform
+        header
+            h1.review-title Share your thoughts with us
+            p=` Hi ${user.name.toUpperCase()}! Leave your feedback for the ${course.name.toUpperCase()} Skill Building Course.`
+        br
+        section.review-form
+            form
+                legend.form-legend Rating:
+                .rate
+                    input#star5(type="radio", name="rate", value="5", aria-label="5 stars")
+                    label(for="star5") &#9733;
+                    input#star4(type="radio", name="rate", value="4", aria-label="4 stars")
+                    label(for="star4") &#9733;
+                    input#star3(type="radio", name="rate", value="3", aria-label="3 stars")
+                    label(for="star3") &#9733;
+                    input#star2(type="radio", name="rate", value="2", aria-label="2 stars")
+                    label(for="star2") &#9733;
+                    input#star1(type="radio", name="rate", value="1", aria-label="1 star")
+                    label(for="star1") &#9733;
+                br
+                br
+                label(for="review") Review:
+                .input-group
+                    textarea#review(name="review", rows="8", cols="96")
+                button#submit.ml-4.border.rev.border-blue-500.font-medium.py-2.px-4.rounded.nav__el-courses(data-course-id=course._id) Submit
+            

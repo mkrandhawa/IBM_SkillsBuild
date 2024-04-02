@@ -1,0 +1,13 @@
+extends ../../views/base
+
+block content
+    include ../../views/headerCourse
+    .main-container
+        include navAdmin
+        .content_delete
+            each course in courses
+                .course-card
+                    .course-info
+                        h2.course-title.cname= course.name
+                        img.course-image.admin_courses(src=`/img/courses/${course.imageCover}` alt='Course image')
+                        a.stats.check_btns(href=`/admin/stats/${course.slug}`) Check Statistics

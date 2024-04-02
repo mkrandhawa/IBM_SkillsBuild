@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Reviews</title>
+    <link rel="stylesheet" href="../../public/css/review.css">
+</head>
+<body>
+
+<main class="container">
+    <header>
+        <h1>Course Review</h1>
+        <p>Hi Taran! Leave your feedback for the XYZ Skill Building Course.</p>
+    </header>
+    <br>
+    <section class="review-form">
+        <form>
+            
+                <legend class="form-legend">Rating:</legend>
+                <div class="rate">
+                    <input type="radio" id="star5" name="rate" value="5" aria-label="5 stars" />
+                    <label for="star5">&#9733;</label>
+                    <input type="radio" id="star4" name="rate" value="4" aria-label="4 stars" />
+                    <label for="star4">&#9733;</label>
+                    <input type="radio" id="star3" name="rate" value="3" aria-label="3 stars" />
+                    <label for="star3">&#9733;</label>
+                    <input type="radio" id="star2" name="rate" value="2" aria-label="2 stars" />
+                    <label for="star2">&#9733;</label>
+                    <input type="radio" id="star1" name="rate" value="1" aria-label="1 star" />
+                    <label for="star1">&#9733;</label>
+                </div>
+            <br><br>
+            
+            <label for="review">Review:</label>
+            <div class="input-group">
+                <textarea id="review" name="review" rows="8" cols="96"></textarea>
+            </div>
+            <button type="submit">Submit Review</button>
+        </form>
+    </section>
+
+    <section class="reviews">
+        <h2>Reviews</h2>
+        <div class="review-item">
+            <p><strong>John Doe</strong> - <em>Rating: 5 Stars</em></p>
+            <p>This course was incredibly helpful. I was able to learn and apply new skills immediately in my job. Highly recommend!</p>
+        </div>
+        
+    </section>
+</main>
+
+</body>
+</html>

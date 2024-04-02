@@ -1,0 +1,28 @@
+extends ../../views/base
+
+block content
+    include ../../views/headerCourse
+    .main-container
+        include navAdmin
+        .content
+            h1.page-title Course Performance Dashboard
+            .stats-dashboard
+                .stat-card.total-students(class= totUser === 0 ? 'no-students' : 'students-enrolled')
+                    h3 Total Students
+                    p.stat-number= totUser
+                .stat-card.students-started(class=classForStart)
+                    h3 Students Started
+                    p.stat-number= totStart
+                .stat-card.students-completed(class=classForCompleted)
+                    h3 Students Completed
+                    p.stat-number= totCompleted
+                if course.ratingsAverage <= 3.0
+                    .stat-card.low-rating
+                        h3 Rating Avg/Qty.
+                        p.stat-number= `${course.ratingsAverage}/${course.ratingsQuantity}`
+                
+                else
+                    .stat-card.students-rated.green
+                        h3 Rating Avg/Qty.
+                        p.stat-number= `${course.ratingsAverage}/${course.ratingsQuantity}`
+            
