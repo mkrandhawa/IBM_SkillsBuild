@@ -1,0 +1,21 @@
+extends ../../views/base
+
+
+
+block content 
+    include ../../views/headerCourse 
+    .main-container
+        include navUser 
+        .content
+            h2.upload Use the form below to upload your profile picture!
+
+            form.form.form-user-data
+                .form__group.form__photo-upload
+                    img.form__user-photo(src=`/img/users/${user.photo}`, alt='User photo')
+                    //-accept all image files name is photo as it is same for the field name
+                    input.form__upload(type='file', accept = 'image/*', id='photo', name='photo')
+                    label(for='photo') Choose new photo
+                    span#file_name
+                .form__group.right
+                    button.save__settings Upload Picture
+    script(src='/js/fileName.js')

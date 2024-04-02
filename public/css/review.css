@@ -1,0 +1,143 @@
+.container-revform {
+    background-image: url("../img/ibm.png");
+    background-size: cover;
+    background-position: center;
+    max-width: 800px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(60, 21, 187, 0.2);
+}
+
+h1, h2 {
+    color: #0F62FE; 
+    text-shadow: #f0f0f0;
+    font-size: large;
+    
+}
+
+.rate {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    direction: ltr; 
+}
+
+.rate input[type="radio"] {
+    display: none;
+}
+
+.rate label {
+    cursor: pointer;
+    font-size: 30px;
+    color: hwb(50 31% 67%);
+    transition: color 0.2s ease-in-out;
+    border: none; 
+    outline: none; 
+}
+
+.rate input[type="radio"]:checked + label,
+.rate input[type="radio"]:checked ~ label,
+.rate label:hover,
+.rate label:hover ~ label {
+    color: #ffaa00; 
+}
+
+.rate {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left; 
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #B8C0CA; 
+    border-radius: 6px;
+    font-family: inherit;
+    resize: vertical;
+    background-color: #fff;
+}
+
+.input-group{
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 10px 0; /* Adjust padding */
+    border: none;
+    border-bottom: 2px solid #007bff; /* Bottom line style */
+    background-color: transparent; /* Transparent background */
+    transition: border-bottom 0.3s ease; /* Smooth transition */
+    font-size: 16px;
+    outline: none; /* Remove outline on focus */
+    transition: transform 0.3s ease;
+}
+.input-group:hover{
+    transform: scale(1.02);
+    box-shadow: gray;
+}
+
+.input-group:focus {
+    border-bottom: 2px solid #0056b3; /* Change color on focus */
+}
+
+button {
+    width: 100%;
+    background-color: #0F62FE; 
+    color: #FFFFFF;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0043ce; 
+    transform: translateY(-2px); 
+}
+
+.reviews {
+    margin-top: 50px;
+}
+
+.review-item {
+    background-color: #f8f8f8;
+    border-radius: 6px;
+    padding: 40px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(201, 26, 26, 0.1);
+}
+
+.review-item:last-child {
+    margin-bottom: 0;
+}
+
+.rev{
+    margin-left: 0rem;
+}
+
+.remove-review-btn {
+    background-color: #0F62FE;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+.title{
+    margin-bottom: 20px;;
+}

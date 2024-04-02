@@ -1,0 +1,31 @@
+extends ../../views/base
+
+block content
+  include ../../views/headerCourse
+  .main-container
+    include navUser 
+    .content
+      .welcome Search for friends
+      form.search-form
+        .search-container
+          input.search-input(type='text', placeholder='Search...', name='search')
+          button.search-button Search
+      if users
+        table.ranking
+          thead
+            tr
+              th Username
+              th Name
+              th Rank
+              th Action
+          tbody
+            each u in users
+              tr
+                td= u.username
+                td= u.name
+                td= u.Rank
+                td
+                  form
+                    button.addFriend(data-user-id=u._id) Add Friend
+      if text
+        p= text

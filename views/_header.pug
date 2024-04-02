@@ -1,0 +1,26 @@
+header
+    nav.flex.justify-between.shadow-md.shadow-gray-400.items-center.py-6.px-52
+        a(href='https://www.ibm.com/uk-en')
+            img.h-12(src='/img/ibm-logo.png', alt='IBM Logo')
+
+        if user 
+            if user.role == 'user'
+                .flex.items-center
+                    a.ml-4.text-blue-500.border.border-blue-500.font-medium.py-2.px-4.rounded.nav__el-courses(href='/courses') Courses
+                    a.ml-4.text-blue-500.border.border-blue-500.font-medium.py-2.px-4.rounded.nav__el--logout(href='#') Logout
+                    a.nav__el(href='/account')
+                        img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
+                        span.nav__el.username= user.name.split(' ')[0]
+            if user.role == 'admin'
+                .flex.items-center
+                    a.ml-4.text-blue-500.border.border-blue-500.font-medium.py-2.px-4.rounded.nav__el--logout(href='#') Logout
+                    a.nav__el(href='/admin')
+                        img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
+                        span.nav__el.username= user.name.split(' ')[0]
+        else 
+            div
+                a.text-white.bg-blue-500.hover-bg-blue-700.font-medium.py-2.px-4.rounded(href='/login') Login
+                a.ml-4.text-blue-500.border.border-blue-500.-text-white.font-medium.py-2.px-4.rounded.signup(href='/signup') Register
+
+
+

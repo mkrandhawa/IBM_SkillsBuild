@@ -1,0 +1,32 @@
+extends ../../views/base
+
+block content
+  include  ../../views/headerCourse
+  .main-container
+    include navUser 
+    .content
+      .table-title Leaderboard
+      br
+      table#Leaderboard_table
+        thead 
+          tr
+            th Position
+            th Username
+            th Name
+            th Points
+            th Level
+        tbody
+          if leaderboard.length === 0
+            tr
+              td(colspan="3") No friends in the leaderboard
+          else
+            - var i = 0;
+            each user in leaderboard
+              - i++;
+              tr
+                td=  i
+                td= user.username
+                td= user.name
+                td= user.points
+                td= user.Rank
+

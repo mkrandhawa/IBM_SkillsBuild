@@ -1,0 +1,17 @@
+extends ../../views/base 
+
+
+block content 
+    include ../../views/headerCourse
+    .main-container
+        include navAdmin
+        .content_delete
+            each course in courses
+                .delete__reviews
+                    h2.course-name=course.name
+                    img.admin_courses(src=`/img/courses/${course.imageCover}` alt='Course image')
+                    p 
+                        span.card__footer-text  Total comment/s: 
+                        span.card__footer-value= course.ratingsQuantity  
+                    a.check_btns(href=`/admin/${course.slug}`) Check Reviews
+                    
