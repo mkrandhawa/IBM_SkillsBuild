@@ -6,7 +6,7 @@ export const addFriend = async (friendId) => {
   try {
     const res = await axios({
       method: "PATCH",
-      url: `http://localhost:3000/v1/users/addFriend/${friendId}`,
+      url: `/v1/users/addFriend/${friendId}`,
     });
     console.log(res);
     console.log(" i am above if");

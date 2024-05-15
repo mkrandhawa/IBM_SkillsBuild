@@ -7,7 +7,7 @@ export const deleteReviews = async (reviewId) => {
   try {
     const res = await axios({
       method: "DELETE",
-      url: `http://localhost:3000/v1/reviews/${reviewId}`,
+      url: `/v1/reviews/${reviewId}`,
     });
     if (res.data.status === "success") {
       showAlert("success", "Review DELETED successfully");

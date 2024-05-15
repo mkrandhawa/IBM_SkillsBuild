@@ -8,7 +8,7 @@ export const login = async (email, password) => {
     console.log("i am inside catch");
     const res = await axios({
       method: "POST",
-      url: "http://localhost:3000/v1/users/login",
+      url: "/v1/users/login",
       data: {
         email,
         password,
@@ -35,7 +35,7 @@ export const logout = async () => {
     console.log("Before axios request"); // Add this log
     const res = await axios({
       method: "GET",
-      url: "http://localhost:3000/v1/users/logout",
+      url: "/v1/users/logout",
     });
     console.log("After axios request"); // Add this log
     if (res.data.status === "success") {
@@ -55,7 +55,7 @@ export const reviews = async (review, rating, courseId) => {
     console.log("i am inside catch");
     const res = await axios({
       method: "POST",
-      url: `http://localhost:3000/v1/reviews/${courseId}`,
+      url: `/v1/reviews/${courseId}`,
       data: {
         review,
         rating,
@@ -83,7 +83,7 @@ export const start = async (courseId) => {
 
   const res = await axios({
     method: "POST",
-    url: `http://localhost:3000/v1/courses/start/${courseId}`,
+    url: `/v1/courses/start/${courseId}`,
     data: {
       courseId,
     },
@@ -98,7 +98,7 @@ export const complete = async (courseId) => {
     console.log("i am inside course catch");
     const res = await axios({
       method: "PATCH",
-      url: `http://localhost:3000/v1/courses/complete/${courseId}`,
+      url: `/v1/courses/complete/${courseId}`,
       data: {
         courseId,
       },

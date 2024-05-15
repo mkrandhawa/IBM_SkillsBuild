@@ -7,6 +7,7 @@ const xssClean = require("xss-clean");
 const appError = require("./utils/appError");
 const path = require("path");
 const errorHandler = require("./controllers/errorController");
+const compression = require("compression");
 
 const userRoute = require("./routes/userRoute");
 const reviewRoute = require("./routes/reviewRoute");
@@ -59,6 +60,7 @@ app.use(function (req, res, next) {
   );
   next();
 });
+app.use(compression());
 //ROUTES
 app.use("/", viewRoute);
 app.use("/v1/users", userRoute);
