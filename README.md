@@ -7,7 +7,9 @@ Welcome to the Group 29 repository for the IBM SkillsBuild Project! This project
 Follow these steps to set up the IBM SkillsBuild Project website:
 
 ## Prerequisites
+
 Before you begin, ensure you have the following software and tools installed:
+
 - **Visual Studio Code**: Latest version available [here](https://code.visualstudio.com/download).
 - **Web Browser**: Any modern web browser will do.
 - **Internet Connection**: A stable connection without restrictions is needed.
@@ -16,48 +18,67 @@ Before you begin, ensure you have the following software and tools installed:
 ### Installation Steps
 
 #### 1. Clone the Git Repository
+
 To clone the repository to your local machine, use the following command:
+
 ```bash
 git clone https://campus.cs.le.ac.uk/gitlab/co2201-2024/group-29.git
 ```
 
 #### 2. Open the Project in Visual Studio Code
+
 Navigate to the cloned repository folder and open it with Visual Studio Code.
 
 #### 3. Install Dependencies
+
 Within Visual Studio Code, open a terminal and execute:
+
 ```bash
 npm install
 ```
+
 Ignore any deprecated warnings.
 
 #### 4. Build JavaScript Files
+
 Run the following command to build the JavaScript files:
+
 ```bash
 npm run build:js
 ```
+
 Terminate the process with `Ctrl+C` once complete.
 
 #### 5. Watch JavaScript Files
+
 In a new terminal, start watching the JavaScript files with:
+
 ```bash
 npm run watch:js
 ```
+
 Keep this process running during development.
 
 #### 6. Start the Server
+
 Open another terminal to start the server:
+
 - For development mode:
+
 ```bash
 npm start
 ```
+
 - For production mode:
+
 ```bash
 npm run start:prod
 ```
 
 #### 7. Access the Website
+
 With the server running and the database connected, open your web browser and go to:
+
 ```
 localhost:3000
 ```
@@ -65,11 +86,14 @@ localhost:3000
 #### 8. Login with exsisting credentials
 
 ###### Login as User
+
 ```
 Email: junior@example.com
 Password: test1234
 ```
+
 ###### Login as ADMIN
+
 ```
 Email: admin@example.com
 Password: test1234
@@ -92,7 +116,8 @@ This document outlines the routes available in the IBM SkillsBuild Project and t
 - `GET /login`: Renders the login form.
 - `GET /signup`: Renders the signup form.
 
-## User Routes 
+## User Routes
+
 All the following routes are protected therefore you must be logged in to have access to them.
 
 - `GET /account`: Renders the user's account page (protected route).
@@ -110,7 +135,9 @@ All the following routes are protected therefore you must be logged in to have a
 - `GET /account/searchFriend`: Endpoint to search friends and add them into the friends list.(protected route)
 
 ## Admin Routes
-The following routes are protected, therefore you must be logged in as ADMIN 
+
+The following routes are protected, therefore you must be logged in as ADMIN
+
 - `GET /admin-dashboard`: Renders the admin dashboard (protected, admin-only route).
 - `GET /admin`: Renders the admin account page (protected, admin-only route).
 - `GET /admin/courses`: Retrieves and renders the list of courses with details for admin (protected, admin-only route).
@@ -124,6 +151,4 @@ The following routes are protected, therefore you must be logged in as ADMIN
 - **Database Connection Issues**: If you're experiencing connection issues on restricted networks like University Wi-Fi, try using mobile data or a VPN.
 - **JWT Malformed Error**: In developer mode, if you encounter this error, log in again.
 - **Access Denied**: If you're receiving permission errors, make sure you're using the correct routes for your user level; admin routes require admin access.
-- **Can't find /bundle.js.map on this server**: If you get this error, go into public/js/bundle.js file and at the end of the file have this "/# sourceMappingURL=/js/bundle.js.map" 
-
-
+- **Can't find /bundle.js.map on this server**: If you get this error, go into public/js/bundle.js file and at the end of the file have this "/# sourceMappingURL=/js/bundle.js.map"
