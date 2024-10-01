@@ -9,7 +9,7 @@ export const login = async (email, password) => {
     const res = await axios({
       method: "POST",
       // url: "/v1/users/login",
-      url: "https://ibm-skillsbuild-1e9e8a9b5e74.herokuapp.com/login",
+      url: "https://ibm-skillsbuild-1e9e8a9b5e74.herokuapp.com/v1/users/login",
       data: {
         email,
         password,
