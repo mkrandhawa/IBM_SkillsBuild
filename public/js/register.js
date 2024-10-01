@@ -8,7 +8,7 @@ export const signup = async (name, email, password, cpassword) => {
     console.log("i am inside catch");
     const res = await axios({
       method: "POST",
-      url: "/v1/users/signup",
+      url: "https://ibm-skillsbuild-1e9e8a9b5e74.herokuapp.com/v1/users/signup",
       data: {
         name,
         email,
