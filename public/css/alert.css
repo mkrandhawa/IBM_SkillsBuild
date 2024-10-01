@@ -55,6 +55,9 @@
   background-color: rgb(99, 135, 172);
 }
 
+.landing{
+  height: 600px;
+}
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .alert,
