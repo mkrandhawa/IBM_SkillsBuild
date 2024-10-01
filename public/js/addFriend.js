@@ -6,7 +6,7 @@ export const addFriend = async (friendId) => {
   try {
     const res = await axios({
       method: "PATCH",
-      url: `/v1/users/addFriend/${friendId}`,
+      url: `https://ibm-skillsbuild-1e9e8a9b5e74.herokuapp.com/v1/users/addFriend/${friendId}`,
     });
     console.log(res);
     console.log(" i am above if");

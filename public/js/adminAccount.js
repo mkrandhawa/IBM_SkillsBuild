@@ -7,7 +7,7 @@ export const deleteReviews = async (reviewId) => {
   try {
     const res = await axios({
       method: "DELETE",
-      url: `/v1/reviews/${reviewId}`,
+      url: `https://ibm-skillsbuild-1e9e8a9b5e74.herokuapp.com/v1/reviews/${reviewId}`,
     });
     if (res.data.status === "success") {
       showAlert("success", "Review DELETED successfully");

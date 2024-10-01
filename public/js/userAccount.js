@@ -7,7 +7,7 @@ export const updateSettings = async (data, type) => {
   try {
     const res = await axios({
       method: "PATCH",
-      url: "/v1/users/updateMe",
+      url: "https://ibm-skillsbuild-1e9e8a9b5e74.herokuapp.com/v1/users/updateMe",
       data,
     });
     if (res.data.status === "success") {

@@ -36,7 +36,7 @@ export const logout = async () => {
     console.log("Before axios request"); // Add this log
     const res = await axios({
       method: "GET",
-      url: "/v1/users/logout",
+      url: "https://ibm-skillsbuild-1e9e8a9b5e74.herokuapp.com/v1/users/logout",
     });
     console.log("After axios request"); // Add this log
     if (res.data.status === "success") {
@@ -56,7 +56,7 @@ export const reviews = async (review, rating, courseId) => {
     console.log("i am inside catch");
     const res = await axios({
       method: "POST",
-      url: `/v1/reviews/${courseId}`,
+      url: `https://ibm-skillsbuild-1e9e8a9b5e74.herokuapp.com/v1/reviews/${courseId}`,
       data: {
         review,
         rating,
@@ -84,7 +84,7 @@ export const start = async (courseId) => {
 
   const res = await axios({
     method: "POST",
-    url: `/v1/courses/start/${courseId}`,
+    url: `https://ibm-skillsbuild-1e9e8a9b5e74.herokuapp.com/v1/courses/start/${courseId}`,
     data: {
       courseId,
     },
@@ -99,7 +99,7 @@ export const complete = async (courseId) => {
     console.log("i am inside course catch");
     const res = await axios({
       method: "PATCH",
-      url: `/v1/courses/complete/${courseId}`,
+      url: `https://ibm-skillsbuild-1e9e8a9b5e74.herokuapp.com/v1/courses/complete/${courseId}`,
       data: {
         courseId,
       },
