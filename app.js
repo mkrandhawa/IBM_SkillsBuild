@@ -56,7 +56,8 @@ app.use((req, res, next) => {
 app.use(function (req, res, next) {
   res.setHeader(
     "Content-Security-Policy",
-    "script-src 'self' cdnjs.cloudflare.com"
+    // "script-src 'self' cdnjs.cloudflare.com"
+    "script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com"
   );
   next();
 });
