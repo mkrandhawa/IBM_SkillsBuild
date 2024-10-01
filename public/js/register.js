@@ -35,7 +35,7 @@ export const enroll = async (courseId) => {
     console.log("i am inside catch");
     const res = await axios({
       method: "POST",
-      url: `/v1/users/enrollMe/${courseId}`,
+      url: `https://ibm-skillsbuild-1e9e8a9b5e74.herokuapp.com/v1/users/enrollMe/${courseId}`,
     });
     if (res.data.status === "success") {
       console.log("Enrollment completed");
